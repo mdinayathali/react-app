@@ -6,6 +6,296 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>hello</h1>
+    <!-- <h1>hello</h1> -->
+    <script src="script.js"></script>
+    <nav class="navbar">
+        <div class="logo">Dream Home Realty</div>
+        <div class="nav-links">
+            <a href="#properties">Properties</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <h1>Find Your Dream Home</h1>
+        <p>Discover the perfect property that matches your lifestyle</p>
+        <div class="hero-cta">
+            <button class="cta-button">View Properties</button>
+            <button class="cta-button secondary">Contact Us Today</button>
+        </div>
+    </header>
+
+    <section id="properties" class="featured-properties">
+        <h2>Featured Properties</h2>
+        <div class="property-grid">
+            <div class="property-card">
+                <img src="https://images.unsplash.com/photo-1613977257363-707ba9348227" alt="Luxury Home">
+                <h3>Luxury Villa</h3>
+                <p>$850,000</p>
+                <p>4 Beds | 3 Baths | 3,200 sqft</p>
+            </div>
+            <div class="property-card">
+                <img src="https://images.unsplash.com/photo-1515263487990-61b07816b324" alt="Modern Apartment">
+                <h3>Modern Apartment</h3>
+                <p>$450,000</p>
+                <p>2 Beds | 2 Baths | 1,500 sqft</p>
+            </div>
+            <div class="property-card">
+                <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9" alt="Family Home">
+                <h3>Family Home</h3>
+                <p>$650,000</p>
+                <p>3 Beds | 2.5 Baths | 2,800 sqft</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about-section">
+        <h2>About Us</h2>
+        <p>With over 20 years of experience in real estate, we help you find the perfect property that matches your needs and budget.</p>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <h2>Contact Us</h2>
+        <form class="contact-form">
+            <input type="text" placeholder="Name" required>
+            <input type="email" placeholder="Email" required>
+            <textarea placeholder="Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="contact-info">
+                <h3>Dream Home Realty</h3>
+                <p>123 Real Estate Avenue</p>
+                <p>Phone: (555) 123-4567</p>
+                <p>Email: info@dreamhome.com</p>
+            </div>
+            <div class="social-links">
+                <a href="#">Facebook</a>
+                <a href="#">Instagram</a>
+                <a href="#">LinkedIn</a>
+            </div>
+        </div>
+        <p class="copyright">© 2024 Dream Home Realty. All rights reserved.</p>
+    </footer>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+
+        .navbar {
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            background-color: rgba(255, 255, 255, 0.95);
+        }
+
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 1rem 3%;
+            }
+            
+            .nav-links {
+                display: none; /* You might want to add a mobile menu button */
+            }
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .nav-links a {
+            margin-left: 2rem;
+            text-decoration: none;
+            color: #333;
+        }
+
+        .hero {
+            height: 90vh;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                        url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c');
+            background-position: center;
+            background-attachment: fixed;
+            padding: 0 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            margin-bottom: 1rem;
+            color: white;
+        }
+
+        .hero p {
+            font-size: clamp(1rem, 2vw, 1.2rem);
+            max-width: 600px;
+            color: white;
+        }
+
+        .cta-button {
+            background-color: #ff6b6b;
+            transition: background-color 0.3s ease;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 1rem 2rem;
+            cursor: pointer;
+        }
+
+        .cta-button:hover {
+            background-color: #ff5252;
+        }
+
+        .featured-properties {
+            padding: 5rem 5%;
+        }
+
+        .property-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .property-card {
+            background: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .property-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .property-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .property-card:hover img {
+            transform: scale(1.05);
+        }
+
+        .property-card h3, .property-card p {
+            padding: 0.5rem 1rem;
+        }
+
+        .about-section, .contact-section {
+            padding: 5rem 5%;
+            background-color: #f9f9f9;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            max-width: 600px;
+            margin: 2rem auto;
+        }
+
+        .contact-form input, .contact-form textarea {
+            margin: 0.8rem 0;
+            padding: 1rem;
+            border: 2px solid #eee;
+            transition: border-color 0.3s ease;
+        }
+
+        .contact-form input:focus, 
+        .contact-form textarea:focus {
+            border-color: #ff6b6b;
+            outline: none;
+        }
+
+        .contact-form button {
+            background-color: #ff6b6b;
+            color: white;
+            padding: 1rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .contact-form button:hover {
+            background-color: #ff5252;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 2rem 5%;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 2rem;
+        }
+
+        .social-links a {
+            color: white;
+            margin-left: 1rem;
+            text-decoration: none;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 1rem;
+            border-top: 1px solid #555;
+        }
+
+        @media (max-width: 768px) {
+            .property-grid {
+                grid-template-columns: 1fr;
+                padding: 0 20px;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .social-links {
+                margin-top: 2rem;
+            }
+
+            .social-links a {
+                margin: 0 1rem;
+            }
+
+            .about-section, 
+            .contact-section {
+                padding: 3rem 20px;
+            }
+        }
+
+        .featured-properties h2,
+        .about-section h2,
+        .contact-section h2 {
+            text-align: center;
+            font-size: clamp(1.8rem, 3vw, 2.5rem);
+            margin-bottom: 2rem;
+            color: #333;
+        }
+    </style>
 </body>
 </html>
